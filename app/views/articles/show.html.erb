@@ -1,9 +1,11 @@
 <p id="notice"><%= notice %></p>
-
 <p>
   <strong>Title:</strong>
   <%= @article.title %>
 </p>
+
+<em><%= time_ago_in_words(@article.created_at) %></em> <br>
+<em><%= l(@article.created_at, format: :long)%></em>
 
 <p>
   <strong>Content:</strong>

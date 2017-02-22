@@ -1,8 +1,14 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
-
+  before_action :set_locale
   # GET /articles
   # GET /articles.json
+
+
+  def set_locale
+    I18n.locale = params[:locale].to_sym
+  end
+
   def index
     @articles = Article.all
   end
